@@ -1,0 +1,240 @@
+/* ========= ROOT WRAPPER ========= */
+.login-page {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    box-sizing: border-box;
+    background: radial-gradient(circle at top, #94989A 0, #054166 55%, #054166 100%);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #e5e7eb;
+    position: relative;
+}
+
+/* ========= LOGO TOP-LEFT ========= */
+.login-brand {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-brand__logo {
+    width: 96px;
+    height: 96px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.9));
+}
+
+/* ========= MAIN CARD ========= */
+.login-panel {
+    width: 100%;
+    max-width: 520px;
+    padding: 40px 32px;
+    background: #054166;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.7);
+}
+
+.login-panel__title {
+    margin: 0 0 18px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #f9fafb;
+}
+
+/* ========= FORM ========= */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.login-label {
+    font-size: 13px;
+    color: #cbd5f5;
+    margin-top: 4px;
+}
+
+/* INPUTS */
+.login-input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: #0f192d;
+    color: #fff;
+    border: 1px solid #1e293b;
+    outline: none;
+    box-sizing: border-box;
+    /* prevents overflow on right side */
+    font-size: 14px;
+}
+
+.login-input::placeholder {
+    color: #6b7280;
+}
+
+.login-input:focus {
+    border-color: #3b82f6;
+    box-shadow:
+        0 0 0 1px #1d4ed8,
+        0 0 0 6px rgba(37, 99, 235, 0.3);
+}
+
+/* ========= REMEMBER + FORGOT ========= */
+.login-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0 6px;
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.login-remember {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.login-remember input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #2563eb;
+    cursor: pointer;
+}
+
+.login-link-button {
+    background: transparent;
+    border: none;
+    color: #93c5fd;
+    cursor: pointer;
+    padding: 0;
+    font-size: 12px;
+}
+
+.login-link-button:hover {
+    text-decoration: underline;
+}
+
+/* ========= ERROR TEXT ========= */
+.login-error {
+    margin: 4px 0;
+    font-size: 12px;
+    color: #fecaca;
+}
+
+/* ========= MAIN BUTTON ========= */
+.login-button {
+    margin-top: 6px;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 999px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #f9fafb;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8, #1e3a8a);
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.55);
+    transition:
+        transform 0.12s ease,
+        box-shadow 0.12s ease,
+        filter 0.12s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    box-shadow: 0 14px 30px rgba(37, 99, 235, 0.7);
+}
+
+.login-button:active {
+    transform: translateY(1px);
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.9);
+}
+
+/* ========= FOOTNOTE ========= */
+.login-footnote {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.login-field-error {
+    color: #dc2626;
+    /* red */
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+/* ========= RESPONSIVE ========= */
+
+/* Tablets / small laptops */
+@media (max-width: 1024px) {
+    .login-panel {
+        max-width: 480px;
+        padding: 32px 24px;
+    }
+}
+
+/* Mobiles */
+@media (max-width: 640px) {
+    .login-page {
+        padding: 16px 12px;
+    }
+
+    .login-brand {
+        top: 12px;
+        left: 12px;
+    }
+
+    .login-brand__logo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .login-panel {
+        padding: 24px 18px 18px;
+        border-radius: 18px;
+        max-width: 420px;
+    }
+
+    .login-panel__title {
+        font-size: 24px;
+    }
+
+    .login-input {
+        font-size: 13px;
+    }
+
+    .login-row {
+        font-size: 11px;
+        gap: 8px;
+    }
+
+    .login-link-button {
+        font-size: 11px;
+    }
+}
+
+/* Very small height (landscape phones, small laptops) */
+@media (max-height: 600px) {
+    .login-page {
+        align-items: flex-start;
+        padding-top: 80px;
+    }
+
+    .login-panel {
+        padding: 24px 20px;
+    }
+}

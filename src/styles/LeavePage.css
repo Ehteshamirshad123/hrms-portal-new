@@ -1,0 +1,346 @@
+/* Root background same as Attendance */
+.leave-page-root {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #054166 0, #94989A 220px, #f3f4f6 220px);
+    padding: 32px 16px;
+    box-sizing: border-box;
+}
+
+/* Header in blue strip */
+.leave-page-header {
+    max-width: 1150px;
+    margin: 0 auto 20px;
+    color: #ffffff;
+}
+
+.leave-page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.leave-page-header p {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: #e5e7eb;
+}
+
+/* Main white card */
+.leave-page-card {
+    max-width: 1150px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* Summary cards */
+.leave-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.leave-summary-card {
+    border-radius: 12px;
+    padding: 16px 18px;
+    color: #ffffff;
+}
+
+.leave-summary-card-number {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.leave-summary-card-title {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.leave-summary-card-subtitle {
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+/* Colors */
+.leave-summary-card--balance {
+    background: #16a34a;
+}
+
+.leave-summary-card--pending {
+    background: #2563eb;
+}
+
+.leave-summary-card--approved {
+    background: #059669;
+}
+
+.leave-summary-card--declined {
+    background: #ef4444;
+}
+
+/* Sections */
+.leave-section {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 20px;
+    background: #ffffff;
+}
+
+.leave-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 12px;
+}
+
+.leave-section-help {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0 0 8px;
+}
+
+/* Form grid */
+.leave-form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.leave-form-field {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.leave-form-field label {
+    margin-bottom: 4px;
+}
+
+.leave-form-field input,
+.leave-form-field select,
+.leave-form-field textarea {
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+    font-size: 13px;
+}
+
+.leave-form-field textarea {
+    resize: vertical;
+}
+
+.leave-form-field--fullwidth {
+    grid-column: 1 / span 3;
+}
+
+.leave-halfday-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Submit button row */
+.leave-form-actions {
+    grid-column: 1 / span 3;
+    margin-top: 4px;
+}
+
+.leave-form-actions button {
+    padding: 8px 16px;
+    background: #111827;
+    color: #ffffff;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.leave-form-actions button:disabled {
+    cursor: not-allowed;
+    background: #9ca3af;
+}
+
+/* Table shared styles */
+.leave-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.leave-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.leave-table th,
+.leave-table td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #e5e7eb;
+    text-align: left;
+}
+
+.leave-table th {
+    font-weight: 600;
+}
+
+.leave-table-empty {
+    text-align: center;
+    color: #6b7280;
+}
+
+/* Approve / reject buttons */
+.leave-btn {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: none;
+    font-size: 12px;
+    cursor: pointer;
+    color: #ffffff;
+    margin-right: 4px;
+}
+
+.leave-btn--approve {
+    background: #22c55e;
+}
+
+.leave-btn--reject {
+    background: #ef4444;
+}
+
+/* HR comment box */
+.leave-comment-box {
+    margin-bottom: 10px;
+}
+
+.leave-comment-box label {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.leave-comment-box textarea {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+    padding: 6px 8px;
+    font-size: 12px;
+    resize: vertical;
+}
+
+.error-text {
+    color: #e53935;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Reason column – multi-line ellipsis */
+.leave-reason-cell {
+    max-width: 280px;
+    font-size: 13px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Confirmation modal */
+.leave-confirm-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.leave-confirm-modal {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px 20px;
+    max-width: 380px;
+    width: 100%;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35);
+    box-sizing: border-box;
+}
+
+.leave-confirm-modal h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.leave-confirm-modal p {
+    margin: 0 0 6px;
+    font-size: 13px;
+    color: #374151;
+}
+
+.leave-confirm-note {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.leave-confirm-actions {
+    margin-top: 14px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.leave-confirm-btn {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: none;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.leave-confirm-btn--secondary {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.leave-confirm-btn--primary {
+    background: #111827;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .leave-form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .leave-form-field--fullwidth,
+    .leave-form-actions {
+        grid-column: 1 / span 2;
+    }
+}
+
+@media (max-width: 640px) {
+    .leave-page-card {
+        padding: 16px;
+    }
+
+    .leave-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .leave-form-field--fullwidth,
+    .leave-form-actions {
+        grid-column: 1 / span 1;
+    }
+
+    .leave-summary-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

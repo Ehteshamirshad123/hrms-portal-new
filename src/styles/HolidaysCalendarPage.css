@@ -1,0 +1,406 @@
+/* Root background same family as LeavePage */
+.holidays-page-root {
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+            #054166 0,
+            #94989a 220px,
+            #f3f4f6 220px);
+    padding: 32px 16px;
+    box-sizing: border-box;
+}
+
+/* Header in blue strip */
+.holidays-page-header {
+    max-width: 1150px;
+    margin: 0 auto 20px;
+    color: #ffffff;
+}
+
+.holidays-page-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.holidays-page-header p {
+    margin: 8px 0 0;
+    font-size: 14px;
+    color: #e5e7eb;
+}
+
+/* Main white card */
+.holidays-page-card {
+    max-width: 1150px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* Top row: month controls + country select */
+.holidays-top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.holidays-month-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.holidays-month-label {
+    font-weight: 600;
+}
+
+.holidays-btn-text {
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 999px;
+    color: #111827;
+}
+
+.holidays-btn-text:hover {
+    background: #e5e7eb;
+}
+
+.holidays-btn-link {
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 999px;
+    color: #2563eb;
+}
+
+.holidays-btn-link:hover {
+    background: #eff6ff;
+}
+
+/* Country filter */
+.holidays-filter-field {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+
+.holidays-filter-field label {
+    margin-bottom: 4px;
+}
+
+.holidays-filter-field select {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    font-size: 13px;
+    background: #f9fafb;
+}
+
+/* Section card (similar to LeavePage sections) */
+.holidays-section {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 18px;
+    background: #ffffff;
+}
+
+.holidays-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 6px;
+}
+
+.holidays-section-help {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0 0 12px;
+}
+
+/* Layout: calendar + side panel */
+.holidays-layout {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+/* ===========================
+   CALENDAR SIDE
+   =========================== */
+.holidays-calendar-wrapper {
+    flex: 3;
+}
+
+/* Loading text */
+.holidays-loading {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+/* Weekday header row */
+.holidays-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.holidays-weekday {
+    font-size: 11px;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* Calendar grid */
+.holidays-grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 6px;
+}
+
+/* Day cells – softer blue inspired from header */
+.holidays-cell {
+    min-height: 78px;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    background: rgba(5, 65, 102, 0.03);
+    /* light header blue */
+    padding: 6px 7px;
+    font-size: 12px;
+    box-sizing: border-box;
+    position: relative;
+    transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s;
+}
+
+.holidays-cell--blank {
+    background: transparent;
+    border-color: transparent;
+}
+
+.holidays-cell:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px rgba(15, 23, 42, 0.08);
+    background: rgba(5, 65, 102, 0.06);
+}
+
+/* Today cell highlighted with stronger blue outline */
+.holidays-cell--today {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.45);
+    background: linear-gradient(135deg,
+            rgba(5, 65, 102, 0.06),
+            rgba(37, 99, 235, 0.06));
+}
+
+/* Holiday cell: more visible gradient */
+.holidays-cell--holiday {
+    border-color: #1d4ed8;
+    background: linear-gradient(135deg,
+            rgba(37, 99, 235, 0.06),
+            rgba(59, 130, 246, 0.14));
+}
+
+.holidays-day-number {
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: #0f172a;
+}
+
+/* Holiday badges inside day cell */
+.holidays-badges {
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.holiday-badge {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 2px 6px;
+    font-size: 11px;
+    background: #1d4ed8;
+    color: #ffffff;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.holiday-badge--more {
+    background: #0f172a;
+}
+
+/* Legend */
+.holidays-legend {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.holidays-legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.holidays-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    display: inline-block;
+}
+
+.holidays-legend-dot--today {
+    background: #2563eb;
+}
+
+.holidays-legend-dot--holiday {
+    background: #1d4ed8;
+}
+
+/* ===========================
+   UPCOMING HOLIDAYS PANEL
+   (interactive timeline style)
+   =========================== */
+.holidays-side-panel {
+    flex: 2;
+    min-width: 260px;
+    padding-left: 16px;
+}
+
+/* Card-style panel */
+.holidays-side-panel {
+    background: #f9fafb;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    padding: 14px 14px 14px 20px;
+    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+}
+
+.holidays-upcoming-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 10px;
+}
+
+/* Vertical timeline line */
+.holidays-upcoming-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px;
+    position: relative;
+}
+
+.holidays-upcoming-list::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom,
+            rgba(37, 99, 235, 0.4),
+            rgba(5, 65, 102, 0.15));
+}
+
+/* Each item card */
+.holidays-upcoming-item {
+    position: relative;
+    margin-left: 20px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 8px;
+    transition: box-shadow 0.15s ease, transform 0.1s ease,
+        border-color 0.15s ease;
+    cursor: default;
+}
+
+/* Dot on the timeline */
+.holidays-upcoming-item::before {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+.holidays-upcoming-item:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 14px rgba(15, 23, 42, 0.16);
+    border-color: #2563eb;
+}
+
+/* Date & name */
+.holidays-upcoming-date {
+    font-size: 11px;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.holidays-upcoming-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Empty state */
+.holidays-empty {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Note text */
+.holidays-note {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .holidays-layout {
+        flex-direction: column;
+    }
+
+    .holidays-side-panel {
+        padding-left: 14px;
+        margin-top: 14px;
+    }
+
+    .holidays-upcoming-list::before {
+        left: 4px;
+    }
+
+    .holidays-upcoming-item {
+        margin-left: 18px;
+    }
+
+    .holidays-upcoming-item::before {
+        left: -14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .holidays-page-card {
+        padding: 16px;
+    }
+}

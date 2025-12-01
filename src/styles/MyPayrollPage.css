@@ -1,0 +1,334 @@
+/* ROOT background similar to other pages */
+.mpay-page {
+    min-height: 100vh;
+    background: linear-gradient(to bottom,
+            #054166 0,
+            #94989a 220px,
+            #f3f4f6 220px);
+    padding: 32px 16px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+}
+
+/* HEADER */
+.mpay-header {
+    max-width: 1150px;
+    margin: 0 auto 20px auto;
+    color: #ffffff;
+}
+
+.mpay-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.mpay-subtitle {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #e5e7eb;
+}
+
+/* MAIN CARD */
+.mpay-card {
+    max-width: 1150px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* SECTION */
+.mpay-section {
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background: #ffffff;
+}
+
+.mpay-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.mpay-section-header h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.mpay-section-note {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* TABLE */
+.mpay-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.mpay-table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.mpay-table thead th {
+    text-align: left;
+    padding: 8px 6px;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+    font-weight: 500;
+    color: #374151;
+}
+
+.mpay-table tbody td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #111827;
+}
+
+.mpay-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.mpay-no-data {
+    text-align: center;
+    color: #6b7280;
+    padding: 10px;
+}
+
+/* BUTTONS */
+.mpay-btn {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease,
+        transform 0.1s ease;
+    white-space: nowrap;
+}
+
+.mpay-btn-outline {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #111827;
+}
+
+.mpay-btn-outline:hover {
+    background: #f3f4f6;
+}
+
+.mpay-btn-primary {
+    background: #111827;
+    color: #ffffff;
+}
+
+.mpay-btn-primary:hover {
+    background: #020617;
+}
+
+.mpay-btn-light {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.mpay-btn-light:hover {
+    background: #d1d5db;
+}
+
+/* FILTERS */
+.mpay-filters {
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: flex-end;
+}
+
+.mpay-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 170px;
+    flex: 1 1 170px;
+    font-size: 13px;
+}
+
+.mpay-filter-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.mpay-filter-select {
+    width: 100%;
+    padding: 7px 10px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    font-size: 13px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.mpay-filter-select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow:
+        0 0 0 1px rgba(37, 99, 235, 0.12),
+        0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+/* MODAL */
+.mpay-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9998;
+    padding: 12px;
+    box-sizing: border-box;
+}
+
+.mpay-modal {
+    width: 90%;
+    max-width: 620px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+    box-sizing: border-box;
+}
+
+.mpay-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.mpay-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.mpay-modal-close {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.mpay-modal-summary {
+    font-size: 13px;
+    color: #4b5563;
+    margin-bottom: 10px;
+}
+
+.mpay-details-table {
+    margin-top: 6px;
+}
+
+.mpay-form-actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .mpay-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .mpay-title {
+        font-size: 24px;
+    }
+
+    .mpay-subtitle {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mpay-page {
+        padding: 20px 10px;
+        background: linear-gradient(to bottom,
+                #0f172a 0,
+                #0f172a 200px,
+                #f3f4f6 200px);
+    }
+
+    .mpay-card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .mpay-section {
+        padding: 12px;
+    }
+
+    .mpay-table {
+        font-size: 12.5px;
+        min-width: 640px;
+    }
+
+    .mpay-modal {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 14px;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mpay-page {
+        padding: 16px 8px;
+    }
+
+    .mpay-title {
+        font-size: 20px;
+    }
+
+    .mpay-subtitle {
+        font-size: 12px;
+    }
+
+    .mpay-card {
+        padding: 14px;
+    }
+
+    .mpay-modal {
+        height: 100vh;
+        max-height: 100vh;
+        border-radius: 0;
+    }
+
+    .mpay-modal-header h3 {
+        font-size: 16px;
+    }
+
+    .mpay-modal-summary {
+        font-size: 12px;
+    }
+}

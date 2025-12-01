@@ -1,0 +1,477 @@
+/* ========== BASE PAGE LAYOUT ========== */
+.employees-page {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #054166 0, #94989A 220px, #f3f4f6 220px);
+    padding: 32px 16px;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ========== HEADER ========== */
+.employees-header {
+    max-width: 1150px;
+    margin: 0 auto 20px auto;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.employees-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.employees-subtitle {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #e5e7eb;
+}
+
+/* ADD BUTTON */
+.employees-add-btn {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: none;
+    background: #fbbf24;
+    color: #111827;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.employees-add-btn:hover {
+    background: #f59e0b;
+}
+
+/* ========== MAIN CARD ========== */
+.employees-card {
+    max-width: 1150px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.25);
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* ========== LIST HEADER ========== */
+.employees-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 8px;
+}
+
+.employees-list-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.employees-list-total {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* ===================================================== */
+/* =============== FILTER TOOLBAR (NEW) ================ */
+/* ===================================================== */
+
+/* Whole filter card – similar to Attendance page */
+.employees-filters {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    border-radius: 14px;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    align-items: flex-end;
+}
+
+/* single field (matches JSX: .employees-filter-group) */
+.employees-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 180px;
+    flex: 1 1 180px;
+    font-size: 13px;
+}
+
+.employees-filter-group label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+/* shared input/select style */
+.employees-filter-input,
+.employees-filter-select {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid #d1d5db;
+    font-size: 13px;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+.employees-filter-input:focus,
+.employees-filter-select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow:
+        0 0 0 1px rgba(37, 99, 235, 0.12),
+        0 0 0 4px rgba(37, 99, 235, 0.06);
+}
+
+/* Clear button on right */
+.employees-filter-clear {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #e5e7eb;
+    color: #374151;
+    white-space: nowrap;
+    transition: background 0.15s ease, transform 0.1s ease;
+    align-self: flex-end;
+}
+
+.employees-filter-clear:hover {
+    background: #d1d5db;
+    transform: translateY(-1px);
+}
+
+/* optional helper text */
+.employees-filter-meta {
+    width: 100%;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: -2px;
+    padding-left: 4px;
+}
+
+/* ========== TABLE ========== */
+.employees-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.employees-table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.employees-table thead th {
+    padding: 10px 8px;
+    background: #f1f5f9;
+    border-bottom: 1px solid #d1d5db;
+    font-weight: 600;
+    text-align: left;
+}
+
+.employees-table tbody td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.employees-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.employees-table-empty {
+    padding: 10px;
+    text-align: center;
+    color: #6b7280;
+}
+
+/* ========== BUTTONS IN TABLE ========== */
+.employees-action-btn {
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    cursor: pointer;
+    margin-right: 6px;
+}
+
+.employees-action-btn--outline {
+    background: #fff;
+    border: 1px solid #d1d5db;
+}
+
+.employees-action-btn--outline:hover {
+    background: #f3f4f6;
+}
+
+.employees-action-btn--primary {
+    background: #111827;
+    color: #fff;
+    border: none;
+}
+
+.employees-action-btn--primary:hover {
+    background: #020617;
+}
+
+/* ===================================================== */
+/* ===================== MODALS ======================== */
+/* ===================================================== */
+
+.employees-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* base modal */
+.employees-modal {
+    width: 95%;
+    max-width: 960px;
+    background: white;
+    border-radius: 18px;
+    padding: 22px 24px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+    box-sizing: border-box;
+}
+
+/* slightly wider for form modal */
+.employees-form-modal {
+    max-width: 1000px;
+}
+
+/* header */
+.employees-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.employees-modal-header h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.employees-modal-close {
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+}
+
+.employees-modal-summary {
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #4b5563;
+}
+
+/* DETAILS GRID */
+.employees-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+}
+
+.emp-detail-card {
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    padding: 10px 12px;
+    background: #f9fafb;
+}
+
+.emp-detail-title {
+    font-weight: 600;
+    margin-bottom: 6px;
+    font-size: 13.5px;
+}
+
+/* ===================================================== */
+/* =============== ADD / EDIT FORM ===================== */
+/* ===================================================== */
+
+.employee-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 18px;
+    font-size: 13px;
+}
+
+.employee-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.employee-form-group label {
+    font-size: 13px;
+    color: #374151;
+    font-weight: 500;
+}
+
+.employee-form-group input,
+.employee-form-group select,
+.employee-form-group textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-size: 13px;
+    box-sizing: border-box;
+    background: #ffffff;
+}
+
+.employee-form-group textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.employee-form-group input:focus,
+.employee-form-group select:focus,
+.employee-form-group textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow:
+        0 0 0 1px rgba(37, 99, 235, 0.15),
+        0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.employee-form-group--full {
+    grid-column: 1 / span 2;
+}
+
+/* form actions */
+.employee-form-actions {
+    grid-column: 1 / span 2;
+    margin-top: 4px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.employees-save-btn {
+    padding: 10px 22px;
+    border-radius: 999px;
+    border: none;
+    background: #111827;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.employees-save-btn:hover {
+    background: #020617;
+    transform: translateY(-1px);
+}
+
+/* ===================================================== */
+/* ================== RESPONSIVE ======================= */
+/* ===================================================== */
+
+@media (max-width: 1024px) {
+    .employees-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .employees-modal {
+        max-width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .employees-page {
+        padding: 20px 10px;
+    }
+
+    .employees-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .employees-add-btn {
+        width: 100%;
+    }
+
+    .employees-card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .employees-filters {
+        flex-direction: column;
+        align-items: stretch;
+        border-radius: 12px;
+    }
+
+    .employees-filter-group {
+        min-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    .employees-filter-clear {
+        align-self: flex-start;
+    }
+
+    .employee-form {
+        grid-template-columns: 1fr;
+    }
+
+    .employee-form-group--full,
+    .employee-form-actions {
+        grid-column: 1 / span 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .employees-page {
+        padding: 16px 8px;
+    }
+
+    .employees-card {
+        padding: 14px;
+    }
+
+    .employees-title {
+        font-size: 22px;
+    }
+
+    .employees-subtitle {
+        font-size: 12px;
+    }
+
+    .employees-modal {
+        border-radius: 0;
+        height: 100vh;
+        max-height: 100vh;
+    }
+
+    .employees-table {
+        font-size: 12px;
+        min-width: 580px;
+    }
+}

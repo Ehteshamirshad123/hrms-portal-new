@@ -1,0 +1,399 @@
+/* Root layout – same feel as attendance page */
+.dashboard-root {
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 20px;
+}
+
+.dashboard-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    color: #111827;
+}
+
+.dashboard-subtitle {
+    margin: 0;
+    color: #4b5563;
+    font-size: 14px;
+}
+
+/* GRID LAYOUT */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1.2fr;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.dashboard-left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.dashboard-right {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CARD BASE */
+.dash-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 18px 20px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+}
+
+.dash-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.dash-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.dash-card-subtitle {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Attendance Card specifics */
+.dashboard-clock {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #111827;
+}
+
+.dashboard-attendance-text {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 14px;
+}
+
+.dashboard-attendance-text--late {
+    color: #b91c1c;
+}
+
+/* Buttons (aligned with AttendancePage styles) */
+.dashboard-actions-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.btn {
+    padding: 10px 24px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.18s ease;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.btn-primary:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.btn-outline {
+    background: #7b2f2f;
+    border: 1px solid #7b2f2f;
+    color: #f9fafb;
+}
+
+.btn-outline:hover:not(:disabled) {
+    background: #5c2222;
+}
+
+.btn-outline:disabled {
+    color: #d1d5db;
+    border-color: #9ca3af;
+    background: #6b7280;
+    cursor: not-allowed;
+}
+
+.btn-dark {
+    background: #111827;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-dark:hover:not(:disabled) {
+    background: #020617;
+}
+
+.btn-dark:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+/* Link below attendance card */
+.dash-link {
+    margin-top: 4px;
+    background: none;
+    border: none;
+    padding: 0;
+    color: #2563eb;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* ========= LEAVE SUMMARY CARD ========= */
+
+.dash-card--leave {
+    background: #ffffff;
+}
+
+.dash-card-header--leave {
+    align-items: flex-start;
+}
+
+/* "As of YEAR" pill */
+.leave-asof-pill {
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #f3f4f6;
+    color: #4b5563;
+}
+
+/* Top stat row */
+.leave-stat-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 4px 0 12px;
+}
+
+.leave-stat-card {
+    flex: 1 1 120px;
+    background: #f3f4ff;
+    border-radius: 12px;
+    padding: 10px 12px;
+    box-shadow: inset 0 0 0 1px #e5e7ff;
+}
+
+.leave-stat-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.leave-stat-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
+}
+
+/* table wrapper */
+.leave-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* table */
+.leave-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    table-layout: fixed;
+    /* keeps columns perfectly aligned */
+    font-variant-numeric: tabular-nums;
+}
+
+.leave-table thead th {
+    padding: 8px 6px;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: 600;
+    color: #374151;
+    background: #f9fafb;
+}
+
+.leave-table tbody td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #111827;
+}
+
+/* columns */
+.leave-type-col {
+    text-align: left;
+    width: 40%;
+}
+
+.leave-type-cell {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.leave-num-col {
+    text-align: center;
+    width: 20%;
+}
+
+/* rows */
+.leave-row:hover {
+    background: #f3f4ff;
+}
+
+.leave-row-total {
+    font-weight: 600;
+    background: #f9fafb;
+}
+
+.leave-row-total:hover {
+    background: #eef2ff;
+}
+
+/* total row icon */
+.leave-total-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin-right: 6px;
+    border-radius: 999px;
+    background: #e5e7eb;
+    font-size: 11px;
+}
+
+/* balance pill */
+.leave-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.leave-pill--green {
+    background: #16a34a;
+}
+
+.leave-pill--red {
+    background: #ef4444;
+}
+
+/* no-data row */
+.dash-no-data {
+    text-align: center;
+    padding: 10px;
+    color: #6b7280;
+}
+
+/* Notifications */
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.notification-item {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    align-items: flex-start;
+}
+
+.notification-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 999px;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.notification-body {
+    flex: 1;
+}
+
+.notification-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    color: #111827;
+}
+
+.notification-message {
+    font-size: 13px;
+    color: #4b5563;
+    margin-bottom: 2px;
+}
+
+.notification-time {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dash-card {
+        border-radius: 12px;
+    }
+
+    .leave-stat-row {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-root {
+        padding: 16px;
+    }
+
+    .dashboard-clock {
+        font-size: 32px;
+    }
+
+    .dash-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}

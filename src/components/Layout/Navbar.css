@@ -1,0 +1,259 @@
+/* ====== App shell layout ====== */
+
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+}
+
+.app-shell__main {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ====== Sidebar base ====== */
+
+.sidebar {
+    width: 230px;
+    background: #0f172a;
+    color: #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 14px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(148, 163, 184, 0.4);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 40;
+}
+
+/* Brand */
+
+.sidebar__brand {
+    margin-bottom: 18px;
+}
+
+.sidebar__brand-main {
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.03em;
+}
+
+.sidebar__brand-sub {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 2px;
+}
+
+/* Nav links */
+
+.sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: auto;
+}
+
+.sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.sidebar__link-icon {
+    font-size: 16px;
+    width: 22px;
+    text-align: center;
+}
+
+.sidebar__link-text {
+    white-space: nowrap;
+}
+
+.sidebar__link:hover {
+    background: rgba(148, 163, 184, 0.18);
+}
+
+.sidebar__link--active {
+    background: rgba(56, 189, 248, 0.18);
+    color: #f9fafb;
+}
+
+/* Footer user info */
+
+.sidebar__footer {
+    border-top: 1px solid rgba(148, 163, 184, 0.35);
+    padding-top: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar__user {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.sidebar__user-name {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.sidebar__user-meta {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 11px;
+    color: #cbd5f5;
+}
+
+.sidebar__user-code {
+    opacity: 0.9;
+}
+
+.sidebar__role-badge {
+    padding: 2px 6px;
+    border-radius: 999px;
+    background: rgba(56, 189, 248, 0.16);
+    color: #7dd3fc;
+    font-weight: 500;
+}
+
+/* Logout button */
+
+.sidebar__logout {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #f97373;
+    background: transparent;
+    color: #fecaca;
+    font-size: 12px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.sidebar__logout:hover {
+    background: #f97373;
+    color: #111827;
+    border-color: #f97373;
+}
+
+/* ====== Mobile toggle + overlay ====== */
+
+.sidebar-toggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 50;
+    width: 34px;
+    height: 34px;
+    border-radius: 999px;
+    border: none;
+    background: #0f172a;
+    color: #f9fafb;
+    display: none;
+    /* only mobile */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.4);
+}
+
+.sidebar-toggle__icon {
+    position: relative;
+    width: 18px;
+    height: 2px;
+    background: #f9fafb;
+}
+
+.sidebar-toggle__icon::before,
+.sidebar-toggle__icon::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    background: #f9fafb;
+}
+
+.sidebar-toggle__icon::before {
+    top: -5px;
+}
+
+.sidebar-toggle__icon::after {
+    top: 5px;
+}
+
+/* Backdrop for mobile sidebar */
+
+.sidebar-backdrop {
+    display: none;
+}
+
+.sidebar-backdrop--visible {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    z-index: 35;
+}
+
+/* ====== Responsive behaviour ====== */
+
+@media (max-width: 768px) {
+    .app-shell {
+        /* mobile: main full width, sidebar overlays */
+        display: block;
+    }
+
+    .app-shell__main {
+        padding-top: 50px;
+        /* space for toggle button */
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.2s ease-out;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.6);
+    }
+
+    .sidebar--open {
+        transform: translateX(0);
+    }
+
+    .sidebar-toggle {
+        display: inline-flex;
+    }
+}
+
+@media (min-width: 769px) {
+    .sidebar-toggle {
+        display: none;
+    }
+
+    .sidebar-backdrop {
+        display: none !important;
+    }
+
+    .app-shell__main {
+        /* thoda left padding so pages centre lagain;
+       aap chaho to yeh hata bhi sakte ho */
+        width: calc(100% - 230px);
+    }
+}
