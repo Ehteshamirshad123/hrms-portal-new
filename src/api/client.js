@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: " https://snaggy-kylan-lily.ngrok-free.dev",
+  baseURL: "https://cherelle-unexemptable-puffingly.ngrok-free.dev",
   // baseURL: 'http://192.168.1.10:4000',  // example for LAN
 });
 
